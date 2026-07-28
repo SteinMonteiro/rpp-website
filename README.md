@@ -21,9 +21,9 @@ Or use the VS Code Live Server extension and click **Go Live**.
 
 Deploy to GitHub Pages (with Actions)
 
-This repo includes a workflow at `.github/workflows/deploy.yml` that uploads the repository root to GitHub Pages whenever you push to `main`.
+This repo includes a workflow at `.github/workflows/deploy.yml` that publishes the repository root to a `gh-pages` branch whenever you push to `main`.
 
-The workflow uses current GitHub Pages action versions so it avoids the deprecated artifact upload issue.
+This approach avoids the Pages API failure that can happen when the repository has not yet been fully provisioned for GitHub Pages.
 
 Steps:
 
@@ -35,9 +35,11 @@ git commit -m "Add site and deploy workflow"
 git push origin main
 ```
 
-2. Open the repository **Actions** tab on GitHub and watch the "Deploy to GitHub Pages" workflow run. If it succeeds, GitHub Pages will publish the site.
+2. Open the repository **Actions** tab on GitHub and watch the "Deploy to GitHub Pages" workflow run. If it succeeds, GitHub Pages will publish the site from the `gh-pages` branch.
 
-3. The default site URL will be:
+3. In the repository **Settings → Pages**, set the source to **Deploy from a branch** and select the `gh-pages` branch with the `/ (root)` folder.
+
+4. The default site URL will be:
 
 ```
 https://SteinMonteiro.github.io/rpp-website/
