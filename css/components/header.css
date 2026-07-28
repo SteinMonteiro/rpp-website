@@ -1,0 +1,31 @@
+.brand {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.nav a {
+  margin-left: 18px;
+  color: var(--muted);
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.actions .btn:not(:last-child) {
+  margin-right: 12px;
+}
