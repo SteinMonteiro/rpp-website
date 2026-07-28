@@ -1,31 +1,99 @@
-.brand {
-  font-weight: 800;
-  letter-spacing: -0.03em;
+#site-header .custom-logo {
+    height: 5rem;
+    width: auto;
 }
 
-.nav a {
-  margin-left: 18px;
-  color: var(--muted);
+#site-header .menu-item {
+    white-space: nowrap;
 }
 
-.nav a:hover {
-  color: var(--accent);
+#site-header .menu-item:not(:last-child) {
+    margin-right: 1rem;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 20px;
-  border-radius: 999px;
-  border: 1px solid var(--accent);
+#site-header li.menu-item {
+    border-top: 5px solid transparent;
 }
 
-.btn.primary {
-  background: var(--accent);
-  color: #ffffff;
+#site-header li.current-menu-item {
+    border-color: var(--wp--preset--color--jfi-blue);
 }
 
-.actions .btn:not(:last-child) {
-  margin-right: 12px;
+@media screen and (min-width: 991px) {
+    #site-header #menu-toggle {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    #site-header li.current-menu-item {
+        border-color: transparent;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 5px;
+    }
+    
+    #site-header #primary-menu-list {
+        display: none !important;
+    }
+
+    #site-header #primary-menu-list.active {
+        display: flex !important;
+    }
+
+    #site-header .menu-item {
+        padding: 1rem 0;
+    }
+
+    /* Hiding site content on header open (mobile) */
+    #page-wrapper.hidden,
+    #site-footer.hidden {
+        opacity: 0;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    body.home #site-logo svg {
+        width: 250px;
+        margin-right: auto;
+    }
+}
+
+.mt-n10px {
+    margin-top: -10px;
+}
+
+/* Setting specific breakpoints instead of using media query defaults */
+
+.logo-container {
+    grid-column: span 12;
+}
+
+.search-container,
+.primary-menu-container {
+    grid-column: span 12;
+}
+
+@media screen and (min-width: 1050px) {
+    .logo-container {
+        grid-column: span 4;
+    }
+    
+    .search-container,
+    .primary-menu-container {
+        grid-column: span 8;
+    }   
+}
+
+@media screen and (min-width: 1390px) {
+    .logo-container {
+        grid-column: span 6;
+    }
+    
+    .search-container,
+    .primary-menu-container {
+        grid-column: span 6;
+    }   
 }
