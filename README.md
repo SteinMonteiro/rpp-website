@@ -1,4 +1,4 @@
-# Research to action — website
+# research.policy.practice website
 
 This repository contains a minimal single-page site (static HTML + CSS).
 
